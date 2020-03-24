@@ -326,8 +326,7 @@ find_latest_squash () {
 				main="$b"
 				;;
 			git-subtree-split:)
-				sub="$(git rev-parse "$b^0")" ||
-				die "could not rev-parse split hash $b from commit $sq"
+				sub="$b"
 				;;
 			END)
 				if test -n "$sub"
@@ -944,4 +943,3 @@ split)
 	"cmd_$command" "$@"
 	;;
 esac
-
